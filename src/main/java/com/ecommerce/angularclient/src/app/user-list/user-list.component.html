@@ -1,0 +1,18 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table align="left" class="table-fill" >
+      <thead class="thead-dark">
+      <th class="text-left">#</th>
+      <th class="text-left">UserName</th>
+      <th class="text-left">FirstName</th>
+      </thead>
+      <tbody class="table-hover">
+      <tr class="text-left" *ngFor="let user of users" (click)="select(user)">
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.firstName }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
