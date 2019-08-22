@@ -7,7 +7,7 @@
       <th class="text-left">FirstName</th>
       </thead>
       <tbody class="table-hover">
-      <tr class="text-left" *ngFor="let user of users" (click)="select(user)">
+      <tr class="text-left" *ngFor="let user of users" (click)="select(user)"  [ngClass]="{'highlight' : user == selectedUser}">>
         <td>{{ user.id }}</td>
         <td>{{ user.username }}</td>
         <td>{{ user.firstName }}</td>
