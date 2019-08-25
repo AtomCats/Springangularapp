@@ -1,7 +1,17 @@
 <section class="container">
   <h2>{{title}}</h2>
 
+
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <button class="opensidenav" (click)="openNav()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </nav>
+
+  <div id="sidenav" class="sidenav">
+    <button class="closesidenav" (click)="closeNav()">
+      <i class="fa fa-window-close"></i>
+    </button>
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="dropdown">
@@ -14,9 +24,12 @@
         </div>
       </li>
     </ul>
-  </nav>
-</section>
+  </div>
 
-<section>
-  <router-outlet></router-outlet>
 </section>
+<div id="main">
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
