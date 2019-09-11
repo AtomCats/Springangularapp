@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularclient';
+  acc:HTMLElement;
 
   constructor() {
     this.title = 'Admin tool';
@@ -21,4 +22,16 @@ export class AppComponent {
     document.getElementById("sidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
   }
+
+  collapse() {
+    this.acc = document.getElementById("dropdown-content");
+    if (this.acc.style.display === "block") {
+      this.acc.style.display = "none";
+    } else {
+      this.acc.style.display = "block";
+    }
+
+  }
+
+
 }

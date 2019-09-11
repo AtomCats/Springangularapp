@@ -15,14 +15,13 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="dropdown">
-        <button class="dropbtn">Users
+        <button class="usersbtn" (click)="collapse()">Users
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
+        <div class="dropdown-content" id="dropdown-content">
           <a routerLink="users" class="btn btn-primary active" role="button" routerLinkActive="active">Show</a>
           <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
         </div>
-        <button class="furniturebtn">Мебель</button>
       </li>
     </ul>
   </div>
