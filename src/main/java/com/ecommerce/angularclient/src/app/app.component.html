@@ -15,12 +15,22 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="dropdown">
-        <button class="usersbtn" (click)="collapse()">Users
+        <button class="usersbtn" (click)="collapse('users-content')">Users
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content" id="dropdown-content">
+        <div class="dropdown-content" id="users-content">
           <a routerLink="users" class="btn btn-primary active" role="button" routerLinkActive="active">Show</a>
           <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <button class="usersbtn" (click)="collapse('furniture-content')">Мягкая мебель
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="furniture-content">
+          <a routerLink="users" class="btn btn-primary active" role="button" routerLinkActive="active">Диваны</a>
+          <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Кровати</a>
+          <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Кресла</a>
         </div>
       </li>
     </ul>

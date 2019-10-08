@@ -23,14 +23,13 @@ export class AppComponent {
     document.getElementById("main").style.marginLeft = "0";
   }
 
-  collapse() {
-    this.acc = document.getElementById("dropdown-content");
+  collapse(classname:string) {
+    this.acc = document.getElementById(classname);
     if (this.acc.style.display === "block") {
       this.acc.style.display = "none";
     } else {
       this.acc.style.display = "block";
     }
-
   }
 
 
