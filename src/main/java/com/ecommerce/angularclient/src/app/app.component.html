@@ -33,6 +33,16 @@
           <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Кресла</a>
         </div>
       </li>
+      <li class="dropdown">
+        <button class="usersbtn" (click)="collapse('cabinet-furniture-content')">Корпусная мебель
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="cabinet-furniture-content">
+          <a routerLink="users" class="btn btn-primary active" role="button" routerLinkActive="active">Стенки</a>
+          <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Кухни</a>
+          <a routerLink="adduser" class="btn btn-primary active" role="button" routerLinkActive="active">Шкафы</a>
+        </div>
+      </li>
     </ul>
   </div>
 

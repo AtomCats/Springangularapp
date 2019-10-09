@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import java.sql.Blob;
 import java.util.List;
 
 @Entity
@@ -17,6 +19,7 @@ public class Item {
     private Long id;
     private String name;
     private Float price;
+    private byte[] image;
     @ManyToMany(mappedBy = "items")
     private List<ItemCategory> itemCategory;
 }
