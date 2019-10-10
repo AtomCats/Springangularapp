@@ -2,5 +2,5 @@ export class Item {
   id : number
   name : string
   price : number
-  image : Blob
+  image : string
 }
