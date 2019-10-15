@@ -11,6 +11,7 @@ import {UserService} from "./service/user-service.service";
 import { CreateUserComponent } from './create-user/create-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ItemListComponent } from './item-list/item-list.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     UserListComponent,
     UserFormComponent,
     CreateUserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

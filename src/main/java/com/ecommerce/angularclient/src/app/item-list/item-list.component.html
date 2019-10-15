@@ -1,0 +1,7 @@
+<div class="items_content">
+  <ul>
+    <li *ngFor="let item of items" (click)="select(item)"  [ngClass]="{'highlight' : item == selectedItem}">
+      {{item}}
+    </li>
+  </ul>
+</div>
