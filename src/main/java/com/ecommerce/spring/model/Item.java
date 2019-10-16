@@ -19,6 +19,8 @@ public class Item {
     private Long id;
     private String name;
     private Float price;
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
     private byte[] image;
     @ManyToMany(mappedBy = "items")
     private List<ItemCategory> itemCategory;

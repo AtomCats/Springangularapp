@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Objects;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -45,21 +46,24 @@ public class Application {
 /*            userRepository.save(new User(1l,"Anton1", "Anton", "Eremin"));
             userRepository.save(new User(2l,"Bonifacy", "Bon", "Eremin"));*/
 
-            ItemCategory furniture = new ItemCategory(1l,"Furniture", "Мягкая мебель",
+            ItemCategory furniture = new ItemCategory(null,"Furniture", "Мягкая мебель",
                     null);
-            ItemCategory cabinetFurniture = new ItemCategory(2l,"Сabinet furniture", "Корпусная мебель",
+            ItemCategory cabinetFurniture = new ItemCategory(null,"Сabinet furniture", "Корпусная мебель",
                     null);
             itemCategoryRepository.save(furniture);
             itemCategoryRepository.save(cabinetFurniture);
 
 
             //save image into database
-            byte[] sofaImg = getClass().getResourceAsStream("sofa.jpg").readAllBytes();
-            byte[] livingRoomImg = getClass().getResourceAsStream("cabinetFurniture.jpg").readAllBytes();
+            byte[] sofaImg = Objects.requireNonNull(getClass().getClassLoader()
+                    .getResourceAsStream("Images/sofa.jpg")).readAllBytes();
+            byte[] livingRoomImg = Objects.requireNonNull(getClass().getClassLoader()
+                    .getResourceAsStream("Images/cabinetFurniture.jpg")).readAllBytes();
 
-            Item couch = new Item(1L, "Couch",200F,sofaImg, Collections.singletonList(furniture));
+            Item couch = new Item(1L, "Couch",200F,sofaImg,
+                    Collections.singletonList(itemCategoryRepository.findItemCategoryByName("Furniture")));
             Item livingRoomFurniture = new Item(1L, "Living room furniture",500F,livingRoomImg,
-                    Collections.singletonList(cabinetFurniture));
+                    Collections.singletonList(itemCategoryRepository.findItemCategoryByName("Сabinet furniture")));
 
             itemRepository.save(couch);
             itemRepository.save(livingRoomFurniture);

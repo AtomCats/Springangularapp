@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../model/user";
 import {Observable, Subscription} from "rxjs";
 import {Item} from "../model/item";
+import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,8 @@ export class ItemService {
     this.itemsUrl = 'http://localhost:8080/items';
   }
 
-  public findAll() : Item[] {
-    var items
-    this.http.get<Item[]>("http://localhost:8080/items/all").subscribe(data => data.forEach(function (value) {
-      var uints = new Uint8Array(value.imageSrc);
-      var base64 = btoa(String.fromCharCode.apply(null, uints));
-      value.imageUrl = 'data:image/jpeg;base64,' + base64;
-      items.add(value)
-    }))
-    return items
+  public findAll() {
+    return this.http.get<Item[]>("http://localhost:8080/items/all");
   }
 
   public save(item: Item) {
@@ -34,5 +28,7 @@ export class ItemService {
     return this.http.delete(`${this.itemsUrl}/${id}`, { responseType: 'text' });
   }
 
-  private convertToUrl
+  private useSanitizer(value: string) : SafeUrl {
+    return this.localSanitizer.bypassSecurityTrustUrl(value)
+  }
 }

@@ -8,10 +8,8 @@ import {ItemListComponent} from "./item-list/item-list.component";
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'adduser', component: CreateUserComponent },
-  { path: 'showItems', component: ItemListComponent }
-/*
-  { path: '', redirectTo: 'users', pathMatch: 'full' },
-*/
+  { path: 'showItems', component: ItemListComponent },
+  { path: '', redirectTo: 'showItems', pathMatch: 'full' },
 ];
 
 @NgModule({
