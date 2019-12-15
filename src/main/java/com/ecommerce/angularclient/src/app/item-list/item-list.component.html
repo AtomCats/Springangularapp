@@ -1,7 +1,5 @@
 <div class="items_content">
-  <ul>
-    <li *ngFor="let item of items" (click)="select(item)"  [ngClass]="{'highlight' : item == selectedItem}">
-      <img [src]="item.imageUrl" width="100" height="50">
-    </li>
-  </ul>
+    <ul  class="table-fill" *ngFor="let item of items" (click)="select(item)"  [ngClass]="{'highlight' : item == selectedItem}">
+        <img [src]="item.imageUrl">
+    </ul>
 </div>

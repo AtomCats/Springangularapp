@@ -27,8 +27,4 @@ export class ItemService {
   public delete(id: number): Observable<any> {
     return this.http.delete(`${this.itemsUrl}/${id}`, { responseType: 'text' });
   }
-
-  private useSanitizer(value: string) : SafeUrl {
-    return this.localSanitizer.bypassSecurityTrustUrl(value)
-  }
 }
