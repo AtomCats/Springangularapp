@@ -10,7 +10,7 @@
 
   <div id="sidenav" class="sidenav">
     <div class="sidenav_btns">
-      <button class="filter_btn nav_btn" >
+      <button class="filter_btn nav_btn" (click)="openFilter()" >
         <i class="fa fa-filter"></i>
       </button>
       <button class="closesidenav nav_btn" (click)="closeNav()">
@@ -19,52 +19,69 @@
     </div>
     <!-- Links -->
     <ul class="navbar-nav">
+
       <li class="dropdown">
+
         <button class="usersbtn" (click)="collapse('users-content')">Users
           <i class="fa fa-caret-down"></i>
         </button>
+
         <div class="dropdown-content" id="users-content">
           <a routerLink="users" class="submenu_btn" role="button" routerLinkActive="active">Show</a>
           <a routerLink="adduser" class="submenu_btn" role="button" routerLinkActive="active">Add</a>
         </div>
+
       </li>
+
       <li class="dropdown">
+
         <button class="usersbtn" (click)="collapse('furniture-content')">Мягкая мебель
           <i class="fa fa-caret-down"></i>
         </button>
+
         <div class="dropdown-content" id="furniture-content">
           <a routerLink="users" class="submenu_btn" role="button" routerLinkActive="active">Диваны</a>
           <a routerLink="adduser" class="submenu_btn" role="button" routerLinkActive="active">Кровати</a>
           <a routerLink="adduser" class="submenu_btn" role="button" routerLinkActive="active">Кресла</a>
         </div>
+
       </li>
+
       <li class="dropdown">
+
         <button class="usersbtn" (click)="collapse('cabinet-furniture-content')">Корпусная мебель
           <i class="fa fa-caret-down"></i>
         </button>
+
         <div class="dropdown-content" id="cabinet-furniture-content">
           <a routerLink="users" class="submenu_btn" role="button" routerLinkActive="active">Стенки</a>
           <a routerLink="adduser" class="submenu_btn" role="button" routerLinkActive="active">Кухни</a>
           <a routerLink="adduser" class="submenu_btn" role="button" routerLinkActive="active">Шкафы</a>
         </div>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+  <div id="sidefilter" class="sidefilter">
+    <div class="sidenav_btns">
+      <button class="backtomenu" (click)="closeFilter()">
+        <i class="fa fa-arrow-circle-left"></i>
+      </button>
+    </div>
+
+    <ul class="sidefiltercontext">
+      <li class="dropdown">
+        <button class="filterbtn" (click)="collapse('filter_manufacturer_content')">Производитель
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="filter_manufacturer_content">
+          <a routerLink="users" class="submenu_btn" role="button" routerLinkActive="active">Стенки</a>
+        </div>
       </li>
     </ul>
-    <div class="sidefilter">
-      <button class="backtomenu">
-        <i class="fas fa-arrow-circle-left"></i>
-      </button>
-
-      <ul class="sidefiltercontext">
-        <li class="dropdown">
-          <button class="filterbtn" (click)="collapse('filter_manufacturer_content')">Производитель
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content" id="filter_manufacturer_content">
-            <a routerLink="users" class="submenu_btn" role="button" routerLinkActive="active">Стенки</a>
-          </div>
-        </li>
-      </ul>
-    </div>
   </div>
 
 </section>
