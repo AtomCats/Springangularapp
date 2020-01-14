@@ -16,12 +16,16 @@ export class AppComponent {
   openNav() {
     document.getElementById('sidenav').style.width = '250px';
     document.getElementById('main').style.marginLeft = '250px';
+    document.getElementsByClassName('container').item(0).setAttribute('style', 'margin-left:250px');
+    document.getElementsByClassName('opensidenav').item(0).setAttribute('style', 'display:none');
   }
-
   closeNav() {
     document.getElementById('sidenav').style.width = '0';
     document.getElementById('main').style.marginLeft = '0';
+    document.getElementsByClassName('container').item(0).setAttribute('style', 'margin-left:0px');
+    document.getElementsByClassName('opensidenav').item(0).setAttribute('style', 'display:block');
   }
+
   openFilter() {
     document.getElementById('sidefilter').style.width = '250px';
   }

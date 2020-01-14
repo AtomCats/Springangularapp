@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" id="container">
   <h2>{{title}}</h2>
 
 
@@ -22,8 +22,8 @@
 
       <li class="dropdown">
 
-        <button class="usersbtn" (click)="collapse('users-content')">Users
-          <i class="fa fa-caret-down"></i>
+        <button class="usersbtn menubtn" (click)="collapse('users-content')">Users
+          <i class="fa fa-caret-down" id="menuicon"></i>
         </button>
 
         <div class="dropdown-content" id="users-content">
@@ -35,7 +35,7 @@
 
       <li class="dropdown">
 
-        <button class="usersbtn" (click)="collapse('furniture-content')">Мягкая мебель
+        <button class="usersbtn menubtn" (click)="collapse('furniture-content')">Мягкая мебель
           <i class="fa fa-caret-down"></i>
         </button>
 
@@ -49,7 +49,7 @@
 
       <li class="dropdown">
 
-        <button class="usersbtn" (click)="collapse('cabinet-furniture-content')">Корпусная мебель
+        <button class="usersbtn menubtn" (click)="collapse('cabinet-furniture-content')">Корпусная мебель
           <i class="fa fa-caret-down"></i>
         </button>
 
@@ -67,14 +67,14 @@
 
   <div id="sidefilter" class="sidefilter">
     <div class="sidenav_btns">
-      <button class="backtomenu" (click)="closeFilter()">
+      <button class="backtomenu " (click)="closeFilter()">
         <i class="fa fa-arrow-circle-left"></i>
       </button>
     </div>
 
     <ul class="sidefiltercontext">
       <li class="dropdown">
-        <button class="filterbtn" (click)="collapse('filter_manufacturer_content')">Производитель
+        <button class="filterbtn menubtn" (click)="collapse('filter_manufacturer_content')">Производитель
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content" id="filter_manufacturer_content">
